@@ -1,0 +1,36 @@
+  <br>
+
+<div class="row">
+  <div class="panel">
+    <h3>Listado de mis tarjetas</h3>
+  </div>
+  <br>
+  <p>
+    <%= link_to 'Registrar nueva tarjeta', codigos_path , :class => "button button-primary middle" %>
+  </p>
+
+<table class="table">
+  <thead class="sinborde">
+    <tr class="sinborde">
+      <th class= "sinborde">Código de Tarjeta</th>
+      <th class= "sinborde">Nombre</th>
+      <th class= "sinborde"></th>
+      <th class= "sinborde"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mains.each do |main| %>
+      <tr>
+        <td><%= link_to main.code, main, :class=> "color"%></td>
+        <td class="color"><%= main.name %></td>
+        <td><%= link_to 'Editar', edit_main_path(main), :class => "button button-primary small" %></td>
+        <td><%= link_to 'Dar de baja', main, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+

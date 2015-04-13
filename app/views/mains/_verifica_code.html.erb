@@ -1,0 +1,17 @@
+<div class="row">
+<br>
+<h3>Registra nueva tarjeta</h3><br><br>
+
+<%= form_tag :controller => 'mains', :action => 'new', :method => 'post' do %>
+
+  <div class="panel">
+  <div class="field">
+    <h5> Ingresa el código que se encuentra en tu tarjeta</h5>
+    <%= text_field_tag :code, nil, :value => nil ,:class => '' %>
+  </div>
+    <%= submit_tag "Registrar", :class => "button button-primary middle" %>
+   
+  </div>
+
+<% end %>
+</div>

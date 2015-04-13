@@ -1,0 +1,88 @@
+<div class="panel">
+<div class="row">
+    <%= form_for(@main) do |f| %>
+      <% if @main.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@main.errors.count, "error") %> prohibited this main from being saved:</h2>
+
+          <ul>
+          <% @main.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">1.- Datos personales</a></li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">2.- Datos médicos</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">3.- Contacto de Emergencia</a></li>
+      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">4.- Datos de Seguros</a></li>
+      <li class="actions">
+      <%= f.submit "Guardar información", :class => "button button-primary small" %>
+      </li>
+  </ul>
+
+  
+<br>
+  <!-- Tab panes -->
+  <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <span class="lead">Datos Personales</span><br><br>
+        <p class="text-nowrap">Código de tarjeta</p>
+        <%= f.text_field :code, :class => "",:placeholder => "ejemplo: XX00292901", :required => true, :value => @resultado, :readonly=> true %>
+  
+         <p class="text-nowrap">Nombre completo</p>
+        <%= f.text_field :name, :class => "" ,:placeholder => "ejemplo: Pedro Pérez", :required => true %>
+
+         <p class="text-nowrap">Edad</p>
+        <%= f.text_field :age, :class => "",:placeholder => "Ingresa tu edad", :required => true  %>
+     
+         <p class="text-nowrap">Sexo</p>
+        <%= f.select(:sex, ["Masculino","Femenino"] , {include_blank: "Selecciona el sexo"}, {:class => "form-control tamano",:required => true}) %>
+     
+
+     </div>
+<div role="tabpanel" class="tab-pane" id="profile">
+    <span class="lead">Datos Médicos</span><br><br>
+    <p class="text-nowrap">Tipo de Sangre</p>
+    <%= f.text_field :blood_type, :class => "", :placeholder => "ejemplo AB+", :required => false %>  
+   <p class="text-nowrap">Soy alergico a las siguientes comidas</p>
+    <%= f.text_area(:allergic_food , size: '20x3', :class => "form-control tamano", :placeholder => "ejemplo: Camarones", :required => false) %>
+    <p class="text-nowrap">Soy alergico a los siguientes medicamentos</p>
+    <%= f.text_area(:allergic_drug , size: '20x3', :class => "form-control tamano", :placeholder => "ejemplo: Penicilina", :required => false) %>
+    <p class="text-nowrap">Padezco de las siguientes enfermedades</p>
+    <%= f.text_area(:diseases , size: '20x3', :class => "form-control tamano", :placeholder => "ejemplo: Diabetes", :required => false)  %>
+</div>
+
+<div role="tabpanel" class="tab-pane" id="messages">
+      <br>
+      <span class="lead">Datos de Contacto</span><br><br>
+          <p class="text-nowrap">En caso de emergencia comunicarse con:</p>
+          <%= f.text_field :emergency_name, :class => "", :placeholder => "ejemplo: Pedro Pérez", :required => true %>
+          <p class="text-nowrap">Número telefonico a donde se comunicaran:</p>
+          <%= f.text_field :emergency_phone , :class => "", :placeholder => "número movil o número local", :required => true%>
+</div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+      <br>
+    <span class="lead">Alta de nueva tarjeta</span><br><br>
+
+    <p class="text-nowrap">Póliza de seguro de vida:</p>
+    <%= f.text_field :life_insurance , :class => "" , :placeholder => "Número de póliza 000-1223930303", :required => false%>
+    
+    <p class="text-nowrap">Póliza de seguro de auto:</p>
+    <%= f.text_field :car_insurance, :class => "", :placeholder => "Número de póliza 000-1223930303", :required => false %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+    </div>
+   </div>
+  </div>
+<% end %>
+</div>
+</div>
