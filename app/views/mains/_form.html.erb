@@ -77,8 +77,8 @@
     <%= f.text_field :car_insurance, :class => "", :placeholder => "Número de póliza 000-1223930303", :required => false %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id, :value => current_user.uid %>
+   
+    <%= f.hidden_field :user_id, :value => current_user.uid %>
   </div>
     </div>
    </div>
