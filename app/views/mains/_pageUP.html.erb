@@ -41,8 +41,7 @@
               <img src="<%= current_user.image %>" class="student-card-avatar">
             </li>
             <% if user_signed_in? %>
-               <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-
+               <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'plan button button-info small'  %>
             <% end %>
         <body>
 
