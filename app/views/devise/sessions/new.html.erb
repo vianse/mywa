@@ -25,7 +25,14 @@
 <style type="text/css">
 body {
   margin: 0;
-
+  background: transparent;
+}
+#login{
+    background-color: transparent;
+    top:100px;
+}
+h1{
+  color: white;
 }
 video { 
   position: fixed;
@@ -52,9 +59,6 @@ video {
   #bgvid { display: none; }
 }
 
-.panel{
-  top:10px;
-}
 </style>
 <script type="text/javascript">
   var vid = document.getElementById("bgvid");
@@ -90,17 +94,8 @@ pauseButton.addEventListener("click", function() {
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 <source src="http://demosthenes.info/assets/videos/polina.webm" type="video/webm">
 <source src="http://demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
-
-      
-
-
-
-
-
-
-
 </video>
-<div class="twelve columns centered text-centered headline">
+<div class="twelve columns centered text-centered headline" id="login">
         <h1>
           Bienvenidos a la red mywa
         </h1>
