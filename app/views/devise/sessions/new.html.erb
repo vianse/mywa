@@ -22,27 +22,92 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %> -->
+<style type="text/css">
+body {
+  margin: 0;
 
-<div class="row">
-  <br>
-    <br>
-    <br>
-    <br>
-<div class="panel">
+}
+video { 
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+ background: url('http://demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
 
-    <div class="row">
-      <div class="twelve columns centered text-centered headline">
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(http://demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+
+.panel{
+  top:10px;
+}
+</style>
+<script type="text/javascript">
+  var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+
+
+</script>
+<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="http://demosthenes.info/assets/videos/polina.webm" type="video/webm">
+<source src="http://demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+
+      
+
+
+
+
+
+
+
+</video>
+<div class="twelve columns centered text-centered headline">
         <h1>
           Bienvenidos a la red mywa
         </h1>
         <h2 class="ten columns centered text-centered subheading">
           Más de 2 millones ya usan esto, entra y se parte de la comunidad mas grande de México!
         </h2>
-        <!-- condition ? if_true : if_false -->
-      </div>
-      </div>
-      <br>
-      <div class="nine columns centered text-centered">
+
       <%- if devise_mapping.omniauthable? %>
           <%- resource_class.omniauth_providers.each do |provider| %>
            <%= link_to "Entrar con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class=> "plan button button-info middle centered" ,:id => "gold-signup-link" %><br />
@@ -50,5 +115,5 @@
           <% end -%>
       <% end -%>
     </div>
-</div>
-</div>
+
+
