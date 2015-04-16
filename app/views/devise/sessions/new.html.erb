@@ -102,7 +102,7 @@ pauseButton.addEventListener("click", function() {
         <h2 class="ten columns centered text-centered subheading">
           Más de 2 millones ya usan esto, entra y se parte de la comunidad mas grande de México!
         </h2>
-
+        <br>
       <%- if devise_mapping.omniauthable? %>
           <%- resource_class.omniauth_providers.each do |provider| %>
            <%= link_to "Entrar con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class=> "plan button button-info middle centered" ,:id => "gold-signup-link" %><br />
