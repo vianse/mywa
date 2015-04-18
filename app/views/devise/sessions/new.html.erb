@@ -58,7 +58,10 @@ video {
   html { background: url(http://demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed; }
  
 }
-
+footer{
+  position: relative;
+  bottom: -230px;
+}
 </style>
 <script type="text/javascript">
   var vid = document.getElementById("bgvid");
@@ -97,7 +100,7 @@ pauseButton.addEventListener("click", function() {
 </video>
 <div class="twelve columns centered text-centered headline" id="login">
         <h1>
-          Bienvenidos a la red mywa
+          <strong>Bienvenido a mywa</strong>
         </h1>
         <h2 class="ten columns centered text-centered subheading">
           Más de 2 millones ya usan esto, entra y se parte de la comunidad mas grande de México!
@@ -109,6 +112,13 @@ pauseButton.addEventListener("click", function() {
     
           <% end -%>
       <% end -%>
+
     </div>
 
+  <footer>
+     <img src="<%= asset_path 'mywa.png' %> " width ="150">
+    <p>
+      ©2015 mywa, Inc.
+    </p>
+  </footer>
 
