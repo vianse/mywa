@@ -62,15 +62,27 @@ footer{
   position: relative;
   bottom: -230px;
 }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: #b0e0e6;
+}
+.right {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    background-color: #b0e0e6;
+}
+
 </style>
 <script type="text/javascript">
-  var vid = document.getElementById("bgvid");
+var vid = document.getElementById("bgvid");
 var pauseButton = document.querySelector("#polina button");
 
 function vidFade() {
   vid.classList.add("stopfade");
 }
-
 vid.addEventListener('ended', function()
 {
 // only functional if "loop" is removed 
@@ -96,8 +108,9 @@ pauseButton.addEventListener("click", function() {
 <video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 <source src="http://demosthenes.info/assets/videos/polina.webm" type="video/webm">
-<source src="http://demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+<source src="http://convert2mp3.net/en/?url=http://www.youtube.com/watch?v=y2Gves9T8fc" type="video/mp4">
 </video>
+
 <div class="twelve columns centered text-centered headline" id="login">
         <h1>
           <strong>Bienvenido a mywa</strong>
@@ -112,6 +125,7 @@ pauseButton.addEventListener("click", function() {
     
           <% end -%>
       <% end -%>
+
 
     </div>
 
