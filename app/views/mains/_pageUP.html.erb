@@ -11,6 +11,8 @@
 
     <title>mywa</title>
    <link href='http://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -22,11 +24,11 @@
     <section>
         <a href="/" class="brand">
             
-            <img src="<%= asset_path 'mywa_gris.png' %>" height="200" width="120">
+            <img src="<%= asset_path 'mywa_gris.png' %>" height="200" width="110">
         </a>
         <a class="fixed-trial-button" href="/subscribe/plans?trial=yes">Free trial</a>
       <div id="mobile-nav-toggle">
-        <a href="#" id="nav-toggle" data-nav-toggle="">
+        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           <span class="hamburger"></span>
         </a>
       </div>
@@ -34,42 +36,21 @@
             <li class="nav-item nav-item-home ">
               <a class="nav-anchor" href="/"></a>
             </li>
-            <li class="nav-item nav-item nav-item-free-trial">
-              <a class="button button-primary small" href="/tarjetas">Mis tarjetas</a>
-            </li>
+ 
             <li class="nav-item nav-item">
-              <img src="<%= current_user.image %>" class="student-card-avatar" width="28" height="28">
+              <img src="<%= current_user.image %>" class="student-card-avatar" width="28px" height="28px">
             </li>
+           <span><%= current_user.name %> |  </span>
             <% if user_signed_in? %>
-               <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'plan button button-info small'  %>
+               <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
             <% end %>
         <body>
 
       </ul>
     </section>
   </nav>
-<div class="page-container-responsive">
-    <ul class="subnav-list">
-      <li>
-        <a href="/dashboard" aria-selected="true" class="subnav-item">Escritorio</a>
-      </li>
-      <li>
-        <a href="/inbox" aria-selected="false" class="subnav-item">Bandeja de entrada</a>
-      </li>
-      <li>
-        <a href="/rooms" aria-selected="false" class="subnav-item">Tus anuncios</a>
-      </li>
-      <li>
-        <a href="/trips/upcoming" aria-selected="false" class="subnav-item">Tus viajes</a>
-      </li>
-      <li>
-        <a href="/users/edit" aria-selected="false" class="subnav-item">Perfil</a>
-      </li>
-      <li>
-        <a href="/account" aria-selected="false" class="subnav-item">Cuenta</a>
-      </li>
-    </ul>
-  </div>
+
+
         <!-- Page Content -->
 <section class="page-container">
   <br>
