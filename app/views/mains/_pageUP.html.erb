@@ -38,7 +38,7 @@
               <a class="button button-primary small" href="/tarjetas">Mis tarjetas</a>
             </li>
             <li class="nav-item nav-item">
-              <img src="<%= current_user.image %>" class="student-card-avatar">
+              <img src="<%= current_user.image %>" class="student-card-avatar" width="28" height="28">
             </li>
             <% if user_signed_in? %>
                <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'plan button button-info small'  %>
