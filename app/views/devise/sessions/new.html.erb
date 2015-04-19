@@ -62,17 +62,19 @@ footer{
   position: relative;
   bottom: -230px;
 }
+#login{
+  vertical-align: middle;
+}
 .center {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
     background-color: #b0e0e6;
 }
-.right {
-    position: absolute;
-    right: 0px;
-    width: 300px;
-    background-color: #b0e0e6;
+
+nav {
+  background: transparent;   /* for latest browsers */
+  border-color: transparent;
 }
 
 </style>
@@ -103,17 +105,50 @@ pauseButton.addEventListener("click", function() {
   }
 })
 
-
 </script>
+
+
+<nav data-layout-element="navigation">
+    <section>
+        <a href="/" class="brand">
+             <img src="<%= asset_path 'mywa.png' %> " width ="120">
+        </a>
+
+      <ul class="nav-list">
+            <li class="nav-item nav-item-home ">
+              <a class="nav-anchor" href="/"></a>
+            </li>
+            <li class="nav-item nav-item">
+              <a class="" href="/tarjetas">Registrate</a>
+            </li>
+            <li class="nav-item nav-item">
+              <a class="" href="/sesion">Iniciar Sesión</a>
+            </li>
+             <% if user_signed_in? %>
+            <li class="nav-item nav-item">
+              <img src="<%= current_user.image %>" class="student-card-avatar">
+            </li>
+           
+               <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'plan button button-info small'  %>
+            <% end %>
+        <body>
+
+      </ul>
+    </section>
+  </nav>
+
+
+
 <video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 <source src="http://demosthenes.info/assets/videos/polina.webm" type="video/webm">
-<source src="http://convert2mp3.net/en/?url=http://www.youtube.com/watch?v=y2Gves9T8fc" type="video/mp4">
+<source src="http://demosthenes.info/assets/videos/polina.mp4">
 </video>
 
 <div class="twelve columns centered text-centered headline" id="login">
+  <br>
+  <br>
         <h1>
-          <strong>Bienvenido a mywa</strong>
+          <strong>Taxi, Autobus, Escuelas</strong>
         </h1>
         <h2 class="ten columns centered text-centered subheading">
           Más de 2 millones ya usan esto, entra y se parte de la comunidad mas grande de México!
@@ -130,7 +165,7 @@ pauseButton.addEventListener("click", function() {
     </div>
 
   <footer>
-     <img src="<%= asset_path 'mywa.png' %> " width ="150">
+    
     <p>
       ©2015 mywa, Inc.
     </p>
