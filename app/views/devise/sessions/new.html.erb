@@ -66,10 +66,8 @@ footer{
   vertical-align: middle;
 }
 .center {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    background-color: #b0e0e6;
+    margin-left: auto!important;
+    margin-right: auto!important;
 }
 
 nav {
@@ -77,7 +75,17 @@ nav {
   border-color: transparent;
 }
 
+.blanco{
+  color: white!important;
+  display: block;
+    margin-left: auto!important;
+    margin-right: auto!important;
+
+
+}
+
 </style>
+<% render "mains/style/button_social" %>
 <script type="text/javascript">
 var vid = document.getElementById("bgvid");
 var pauseButton = document.querySelector("#polina button");
@@ -119,10 +127,10 @@ pauseButton.addEventListener("click", function() {
               <a class="nav-anchor" href="/"></a>
             </li>
             <li class="nav-item nav-item">
-              <a class="" href="/tarjetas">Registrate</a>
+              <a href="/tarjetas" class="" data-toggle="modal" data-target="#myModalRegistre">Registrate</a>
             </li>
             <li class="nav-item nav-item">
-              <a class="" href="/sesion">Iniciar Sesión</a>
+              <a href="/sesion" class="" data-toggle="modal" data-target="#myModalLogin">Iniciar Sesión</a>
             </li>
              <% if user_signed_in? %>
             <li class="nav-item nav-item">
@@ -148,21 +156,53 @@ pauseButton.addEventListener("click", function() {
   <br>
   <br>
         <h1>
-          <strong>Taxi, Autobus, Escuelas</strong>
+          <strong>Frase comercial</strong>
         </h1>
         <h2 class="ten columns centered text-centered subheading">
-          Más de 2 millones ya usan esto, entra y se parte de la comunidad mas grande de México!
+          SubFrase Comercial
         </h2>
         <br>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalRegistre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
       <%- if devise_mapping.omniauthable? %>
           <%- resource_class.omniauth_providers.each do |provider| %>
-           <%= link_to "Entrar con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class=> "plan button button-info middle centered" ,:id => "gold-signup-link" %><br />
+           <%= link_to "Regístrate con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class=> "btn btn-facebook fa fa-facebook blanco center" ,:id => "gold-signup-link" %><br />
     
           <% end -%>
       <% end -%>
 
-
+      </div>
     </div>
+  </div>
+</div>
+<div class="modal fade" id="myModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+      <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+           <%= link_to "Inicia sesión con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), :class=> "btn btn-facebook fa fa-facebook blanco center" ,:id => "gold-signup-link" %><br />
+    
+          <% end -%>
+      <% end -%>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <footer>
     
