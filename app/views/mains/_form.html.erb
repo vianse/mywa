@@ -1,3 +1,4 @@
+
 <div class="panel">
 <div class="row">
     <%= form_for(@main) do |f| %>
@@ -34,18 +35,18 @@
         <span class="lead">Datos Personales</span><br><br>
         <p class="text-nowrap">Código de tarjeta</p>
         <%= f.text_field :code, :class => "",:placeholder => "ejemplo: XX00292901", :required => true, :value => @resultado, :readonly=> true %>
-  
          <p class="text-nowrap">Nombre completo</p>
         <%= f.text_field :name, :class => "" ,:placeholder => "ejemplo: Pedro Pérez", :required => true %>
-
          <p class="text-nowrap">Edad</p>
         <%= f.text_field :age, :class => "",:placeholder => "Ingresa tu edad", :required => true  %>
-     
          <p class="text-nowrap">Sexo</p>
         <%= f.select(:sex, ["Masculino","Femenino"] , {include_blank: "Selecciona el sexo"}, {:class => "form-control tamano",:required => true}) %>
-     
+        <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class ="button button-primary middle boton">Siguiente</a>
+  </div>
 
-     </div>
+
+
+
 <div role="tabpanel" class="tab-pane" id="profile">
     <span class="lead">Datos Médicos</span><br><br>
     <p class="text-nowrap">Tipo de Sangre</p>
@@ -56,25 +57,34 @@
     <%= f.text_area(:allergic_drug , size: '20x3', :class => "form-control tamano", :placeholder => "ejemplo: Penicilina", :required => false) %>
     <p class="text-nowrap">Padezco de las siguientes enfermedades</p>
     <%= f.text_area(:diseases , size: '20x3', :class => "form-control tamano", :placeholder => "ejemplo: Diabetes", :required => false)  %>
+    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" class ="button button-primary middle boton">Siguiente</a>
+    <a href="#home" aria-controls="home" role="tab" data-toggle="tab" class ="button button-primary middle boton">Regresar</a>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="messages">
       <br>
       <span class="lead">Datos de Contacto</span><br><br>
-          <p class="text-nowrap">En caso de emergencia comunicarse con:</p>
-          <%= f.text_field :emergency_name, :class => "", :placeholder => "ejemplo: Pedro Pérez", :required => true %>
-          <p class="text-nowrap">Número telefonico a donde se comunicaran:</p>
-          <%= f.text_field :emergency_phone , :class => "", :placeholder => "número movil o número local", :required => true%>
+      <p class="text-nowrap">En caso de emergencia comunicarse con:</p>
+        <%= f.text_field :emergency_name, :class => "", :placeholder => "ejemplo: Pedro Pérez", :required => true %>
+      <p class="text-nowrap">Número telefonico a donde se comunicaran:</p>
+        <%= f.text_field :emergency_phone , :class => "", :placeholder => "número movil o número local", :required => true%>
+      <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Siguiente</a>
+      <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Regresar</a>
 </div>
+
     <div role="tabpanel" class="tab-pane" id="settings">
       <br>
-    <span class="lead">Alta de nueva tarjeta</span><br><br>
+    <span class="lead">Información de Seguros</span><br><br>
 
     <p class="text-nowrap">Póliza de seguro de vida:</p>
     <%= f.text_field :life_insurance , :class => "" , :placeholder => "Número de póliza 000-1223930303", :required => false%>
     
     <p class="text-nowrap">Póliza de seguro de auto:</p>
     <%= f.text_field :car_insurance, :class => "", :placeholder => "Número de póliza 000-1223930303", :required => false %>
+    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Regresar</a>
+    <li class="actions">
+      <%= f.submit "Guardar información", :class => "button button-primary small" %>
+    </li>
 
   <div class="field">
    
@@ -86,3 +96,6 @@
 <% end %>
 </div>
 </div>
+
+<img src="<%= current_user.image %>" class="student-card-avatar imagen" width="28px" height="28px">
+

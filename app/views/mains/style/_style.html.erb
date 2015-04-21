@@ -158,6 +158,15 @@ background-color:  hsl(194, 64%, 55%);
 .brand{
     background-color: transparent!important;
 }
+
+a.button.button-primary.middle.boton{
+	display:none;
+
+}
+img.student-card-avatar.imagen{
+	display: none;
+}
+
 @media (max-width: 760px) {
 .nav{
      list-style: none;
@@ -169,10 +178,68 @@ background-color:  hsl(194, 64%, 55%);
         z-index: 111;
     	}  
 
+span.lead{
+  text-align: center!important;
+  font-size: 24px;
+}	
+
+img.student-card-avatar.imagen{
+	position: fixed;
+	display: inline-block;
+	z-index: 9999;
+	background-color: red;
+}
+
     } 
 
 @media (max-width: 600px) {
 
+a.button.button-primary.middle{
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+  display: table;
+  margin: 0 auto;
+
+}
+
+
+h3{
+	text-align: center;
+}
+
+img{
+	width: 50%;
+	height: 30%;
+}
+
+ul.nav.nav-tabs{
+	display: none
+}
+
+span.lead{
+  text-align: center!important;
+  font-size: 24px;
+}
+
+img.student-card-avatar.imagen{
+	position: absolute;
+	display: block;
+	z-index: 2;
+
+}
+
+}
+@media (max-width: 800px) {
+ul.nav.nav-tabs{
+	display: none
+}
+a.button.button-primary.middle.boton{
+display:inline-block;
+}
 a.button.button-primary.middle{
   width: 50px;
   height: 50px;
@@ -194,8 +261,16 @@ img{
 	height: 30%;
 }
 
+img.student-card-avatar.imagen{
+	position: absolute;
+	top: 80px;
+	left: 42%;
+	display: block;
+	z-index: 2;
+
 }
 
+}
 
 
 
