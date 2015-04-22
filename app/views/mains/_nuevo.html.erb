@@ -13,23 +13,9 @@
 
 <table class="table">
   <thead class="sinborde">
-    <tr class="sinborde">
-      <th class= "sinborde">Código de Tarjeta</th>
-      <th class= "sinborde">Nombre</th>
-      <th class= "sinborde"></th>
-      <th class= "sinborde"></th>
-    </tr>
   </thead>
-
   <tbody>
     <% @mains.each do |main| %>
-      <tr>
-        <td><%= link_to main.code, main, :class=> "color"%></td>
-        <td class="color"><%= main.name %></td>
-        <td><%= link_to 'Editar', edit_main_path(main), :class => "button button-primary small" %></td>
-        <td><%= link_to 'Dar de baja', main, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
         <div class="four columns">
         <div class="callout-card swift">
           <div class="callout-card-icon">
@@ -39,7 +25,8 @@
             <%= main.name%>
           </div>
            
-          <%= link_to 'Editar', edit_main_path(main), :class => "button button-primary small blanco" %>
+          <%= link_to 'Editar', edit_main_path(main), :class => "button button-primary small card_edit" %>
+          <%= link_to 'Dar de baja', main, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"button button-primary small delete" %>
         </div>
       </div>
     <% end %>
