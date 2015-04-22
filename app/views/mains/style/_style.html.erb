@@ -167,30 +167,7 @@ img.student-card-avatar.imagen{
 	display: none;
 }
 
-@media (max-width: 760px) {
-.nav{
-     list-style: none;
-        width: 95%;
-        position: absolute;
-        right: 20px;
-        background: white;
-        top: 72px;
-        z-index: 111;
-    	}  
 
-span.lead{
-  text-align: center!important;
-  font-size: 24px;
-}	
-
-img.student-card-avatar.imagen{
-	position: fixed;
-	display: inline-block;
-	z-index: 9999;
-	background-color: red;
-}
-
-    } 
 
 @media (max-width: 600px) {
 
@@ -206,6 +183,9 @@ a.button.button-primary.middle{
 
 }
 
+.signout{
+		display: none;
+	}
 
 h3{
 	text-align: center;
@@ -232,6 +212,53 @@ img.student-card-avatar.imagen{
 
 }
 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1180px) {
+	.signout{
+		display: none;
+
+	}
+	span#nombre_usuario{
+		display: none;
+
+	}
+
+	img.student-card-avatar.imagen{
+		display: none !important;
+	}
+	span#nombre_usuario{
+		display: none;
+	}
+
+	.nav{
+     list-style: none;
+        width: 95%;
+        position: absolute;
+        right: 20px;
+        background: white;
+        top: 72px;
+        z-index: 111;
+    	}  
+
+	span.lead{
+	  text-align: center!important;
+	  font-size: 24px;
+	}	
+
+	img.student-card-avatar.imagen{
+		position: fixed;
+		display: inline-block;
+		z-index: 9999;
+		background-color: red;
+	}
+	
+}
+
+@media screen (max-width: 768px) {
+img.student-card-avatar.imagen{
+		display: none;
+	}
 }
 @media (max-width: 800px) {
 ul.nav.nav-tabs{
@@ -273,7 +300,12 @@ img.student-card-avatar.imagen{
 
 }
 
+.signout{
+		display: none!important;
+	}
 }
+
+
 
 
 

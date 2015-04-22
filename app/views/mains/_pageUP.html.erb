@@ -26,7 +26,7 @@
             
             <img src="<%= asset_path 'mywa_gris.png' %>" height="200" width="110">
         </a>
-        <a class="fixed-trial-button" href="/subscribe/plans?trial=yes">Free trial</a>
+       
       <div id="mobile-nav-toggle">
         <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           <span class="hamburger"></span>
@@ -40,9 +40,9 @@
             <li class="nav-item nav-item">
               <img src="<%= current_user.image %>" class="student-card-avatar" width="28px" height="28px">
             </li>
-           <span><%= current_user.name %> |  </span>
+           <span id="nombre_usuario"><%= current_user.name %> |  </span>
             <% if user_signed_in? %>
-               <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+               <%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"signout"  %>
             <% end %>
         <body>
 
