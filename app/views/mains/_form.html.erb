@@ -40,7 +40,7 @@
          <p class="text-nowrap">Edad</p>
         <%= f.text_field :age, :class => "",:placeholder => "Ingresa tu edad", :required => true  %>
          <p class="text-nowrap">Sexo</p>
-        <%= f.select(:sex, ["Masculino","Femenino"] , {include_blank: "Selecciona el sexo"}, {:class => "form-control tamano",:required => true}) %>
+        <%= f.select(:sex, ["Masculino","Femenino"] , {include_blank: "Selecciona el sexo"}, {:class => "form-control tamano",:required => true}) %><br>
         <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class ="button button-primary middle boton">Siguiente</a>
   </div>
 
